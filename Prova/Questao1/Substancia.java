@@ -25,10 +25,6 @@ class Substancia {
 
     
     public String toString() {
-        if (inflamavel) {
-            return nome + " (Inflamável)";
-        } else {
-            return nome + " (Não Inflamável)";
-        }
+        return "Substancia {" + nome + ", inflamavel=" + inflamavel + "}";
     }
 }
