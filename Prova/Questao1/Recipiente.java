@@ -3,11 +3,23 @@ class Recipiente {
     private int capacidade;
     private Substancia conteudo;
 
+    public Recipiente( ){}
+
+    public Recipiente(int capacidade){
+        this.capacidade = capacidade;
+    }
+
+    public Recipiente(int capacidade, int quantidade){
+        this.capacidade = capacidade;
+        this.quantidade = quantidade;
+    }
+    
     public Recipiente(int capacidade, Substancia conteudo) {
         this.capacidade = capacidade;
         this.conteudo = conteudo;
         this.quantidade = 0;
     }
+    
 
     public int getQuantidade() {
         return quantidade;
@@ -52,7 +64,12 @@ class Recipiente {
         }
     }
 
+    public void esvaziar(){
+        quantidade = 0;
+    }
+
     public String toString() {
-        return "Recipiente {quantidade=" + quantidade + ", capacidade=" + capacidade + ", substancia=" + conteudo.toString() + "}";
+        String conteudoStr = (conteudo != null) ? conteudo.toString() : "Nenhuma substância";
+        return "Recipiente: quantidade=" + quantidade + ", capacidade=" + capacidade + " || " + conteudoStr;
     }
 }
