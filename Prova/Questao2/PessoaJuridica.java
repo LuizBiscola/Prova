@@ -1,9 +1,16 @@
-public class PessoaJuridica extends Agencia {
+public class PessoaJuridica extends Pessoa {
     private String nome;
     private String cnpj;
 
-    public PessoaJuridica(int numero, String nomeAgencia, String nome, String cnpj) {
-        super(numero, nomeAgencia);
+    public PessoaJuridica(){}
+
+    public PessoaJuridica(String nome, String cnpj) {
+        this.nome = nome;
+        this.cnpj = cnpj;
+    }
+    
+    public PessoaJuridica(String telefone, String endereco, String nome, String cnpj) {
+        super(telefone, endereco);
         this.nome = nome;
         this.cnpj = cnpj;
     }
@@ -24,12 +31,7 @@ public class PessoaJuridica extends Agencia {
         this.cnpj = cnpj;
     }
 
-    @Override
     public String toString() {
-        return "PessoaJuridica{" +
-                "agencia=" + super.toString() +
-                ", nome='" + nome + '\'' +
-                ", cnpj='" + cnpj + '\'' +
-                '}';
+        return ("Nome: " + this.nome + "\nCNPJ: " + this.cnpj + super.toString());
     }
 }
