@@ -17,36 +17,42 @@ class Recipiente {
         return capacidade;
     }
 
-    public Substancia getConteudo() {
+    public Substancia getSubstancia() {
         return conteudo;
     }
 
-    public void setConteudo(Substancia conteudo) {
+    public void setSubstancia(Substancia conteudo) {
         this.conteudo = conteudo;
     }
 
-    public void encher(int qtd) {
+    public void adicionar(int qtd) {
         if (qtd <= 0) return;
-        if (quantidade + qtd > capacidade) {
-            quantidade = capacidade;
-        } else {
-            quantidade += qtd;
+        {
+            if (quantidade + qtd > capacidade) {
+                quantidade = capacidade;
+            } 
+            else 
+            {
+                quantidade += qtd;
+            }
         }
     }
 
-    public void esvaziar(int qtd) {
+    public void remover(int qtd) {
         if (qtd <= 0) return;
-        if (quantidade - qtd < 0) {
-            quantidade = 0;
-        } else {
-            quantidade -= qtd;
+        {
+            if (quantidade - qtd < 0) 
+            {
+                quantidade = 0;
+            } 
+            else 
+            {
+                quantidade -= qtd;
+            }
         }
     }
 
-    @Override
     public String toString() {
-        return "Recipiente {quantidade=" + quantidade +
-                ", capacidade=" + capacidade +
-                ", conteudo=" + conteudo.toString() + "}";
+        return "Recipiente {quantidade=" + quantidade + ", capacidade=" + capacidade + ", substancia=" + conteudo.toString() + "}";
     }
 }
