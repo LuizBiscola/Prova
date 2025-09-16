@@ -1,31 +1,25 @@
 public class Pessoa {
-    private String telefone;
-    private String endereco;
+    private String nome;
 
-    public Pessoa{}()
+    public Pessoa(){}
 
-    public Pessoa(String telefone, String endereco){
-        this.telefone = telefone;
-        this.endereco = endereco;
+    public Pessoa(String nome){
+        this.nome = nome;
     }
 
-    public String getTelefone() {
-        return this.telefone;
+    public String getNome() {
+        return this.nome;
     }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public String getEndereco() {
-        return this.endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
+    public void pagarImposto() {
+        System.out.println("Pagando imposto...");
     }
 
     public String toString() {
-        return ("\ntelefone: " + this.telefone + "\nendereco: " + this.endereco);
+        return ("\nNome: " + this.nome);
     }
 }
