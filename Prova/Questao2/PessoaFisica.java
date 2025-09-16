@@ -1,15 +1,22 @@
-public class PessoaFisica extends Agencia {
+public class PessoaFisica extends Pessoa {
     private String nome;
     private String cpf;
 
-    public PessoaFisica(int numero, String nomeAgencia, String nome, String cpf) {
-        super(numero, nomeAgencia);
+    public PessoaFisica(){}
+
+    public PessoaFisica(String nome, String cpf) {
+        this.nome = nome;
+        this.cpf = cpf;
+    }
+    
+    public PessoaFisica(String telefone, String endereco, String nome, String cpf) {
+        super(telefone, endereco);
         this.nome = nome;
         this.cpf = cpf;
     }
 
     public String getNome() {
-        return nome;
+        return this.nome;
     }
 
     public void setNome(String nome) {
@@ -17,19 +24,14 @@ public class PessoaFisica extends Agencia {
     }
 
     public String getCpf() {
-        return cpf;
+        return this.cpf;
     }
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
-    @Override
     public String toString() {
-        return "PessoaFisica{" +
-                "agencia=" + super.toString() +
-                ", nome='" + nome + '\'' +
-                ", cpf='" + cpf + '\'' +
-                '}';
+        return ("Nome: " + this.nome + "\nCPF: " + this.cpf + super.toString());
     }
 }
